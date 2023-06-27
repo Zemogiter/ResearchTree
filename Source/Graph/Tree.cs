@@ -327,6 +327,7 @@ namespace FluffyResearchTree
                     // current length
                     var length = edge.Length;
                     var neighbour = @in ? edge.In : edge.Out;
+                    var neighbourX = neighbour.X;
                     if (neighbour.X != x)
                         Log.Warning("{0} is not at layer {1}", neighbour, x);
 
@@ -345,7 +346,7 @@ namespace FluffyResearchTree
                             continue;
 
                         // is this spot occupied? 
-                        var otherNode = NodeAt(x, y);
+                        var otherNode = NodeAt(neighbourX, y);
 
                         // occupied, try swapping
                         if (otherNode != null)
